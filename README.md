@@ -7,7 +7,8 @@
 ## Welcoming to  Palindrome Checker Management System
 
 
-```java
+```
+Welcoming to  Palindrome Checker Management System
 ```
 
 ### Author: Krishna Sharma
