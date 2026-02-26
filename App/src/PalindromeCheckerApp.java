@@ -32,7 +32,7 @@ public static void main(String[] args) {
     // Hardcoded string
     String text = "madam";
 
-    boolean isPalindrome = true;
+    boolean isPalindrome =  true;
 
     int left = 0;
     int right = text.length() - 1;
