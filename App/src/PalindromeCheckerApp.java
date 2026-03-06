@@ -1,56 +1,38 @@
-//public class PalindromeCheckerApp {
-//}
-
-
 /**
+ * MAIN CLASS - UseCase3PalindromeCheckerApp
  *
-
- * MAIN CLASS - PalindromeCheckerApp
-
- * Use Case 1: Application Entry & Welcome Message
-
+ * Use Case 3: Reverse String Based Palindrome Check
  * Description:
- * This class represents the entry point of the
- * Palindrome Checker Management System.
-
- * At this stage, the application:
- * - Starts execution from the main() method
- * - Displays a welcome message
- * - Shows application version
-
- * No palindrome logic is implemented yet.
-
- * The goal is to establish a clear startup flow.
-
- * @author krishna
- * @version 1.0
-
+ * This class checks whether a string is a palindrome
+ * by reversing the string and comparing it with
+ * the original value.
+ *
+ * @author Krishna
+ * @version 3.0
  */
 
-public static void main(String[] args) {
+public class UseCase3PalindromeCheckerApp {
 
-    // Hardcoded string
-    String text = "madam";
+    /**
+     * Application entry point for UC3.
+     *
+     * @param args Command-line arguments
+     */
+    public static void main(String[] args) {
 
-    boolean isPalindrome =  true;
+        String input = "madam";   // Example input
+        String reversed = "";
 
-    int left = 0;
-    int right = text.length() - 1;
-
-    // Compare characters from both ends
-    while (left < right) {
-        if (text.charAt(left) != text.charAt(right)) {
-            isPalindrome = false;
-            break;
+        // Iterate from the last character to the first
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed = reversed + input.charAt(i);
         }
-        left++;
-        right--;
-    }
 
-    // Display result
-    if (isPalindrome) {
-        System.out.println("\"" + text + "\" is a palindrome.");
-    } else {
-        System.out.println("\"" + text + "\" is not a palindrome.");
+        // Compare original and reversed strings
+        if (input.equals(reversed)) {
+            System.out.println("The string \"" + input + "\" is a Palindrome.");
+        } else {
+            System.out.println("The string \"" + input + "\" is NOT a Palindrome.");
+        }
     }
 }
