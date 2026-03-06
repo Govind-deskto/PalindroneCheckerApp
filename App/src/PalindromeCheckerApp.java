@@ -7,7 +7,7 @@
  * by reversing the string and comparing it with
  * the original value.
  *
- * @author Developer
+ * @author Krishna
  * @version 3.0
  */
 
