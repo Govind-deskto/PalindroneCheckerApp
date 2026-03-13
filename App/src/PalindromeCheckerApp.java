@@ -3,21 +3,20 @@ import java.util.Stack;
 
 /**
  * ============================================================
- * MAIN CLASS - UseCase12PalindromeCheckerApp
+ * MAIN CLASS - UseCase13PalindromeCheckerApp
  * ============================================================
  *
- * Use Case 12: Strategy Pattern for Palindrome Algorithms
+ * Use Case 13: Performance Comparison
  *
  * Description:
- * This class demonstrates how different palindrome
- * validation algorithms can be selected dynamically
- * at runtime using the Strategy Design Pattern.
+ * This class measures and compares the execution
+ * performance of palindrome validation algorithms.
  *
  * Author: Krishna
- * Version: 12.0
+ * Version: 13.0
  */
 
-public class UseCase12PalindromeCheckerApp {
+public class UseCase13PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -28,49 +27,43 @@ public class UseCase12PalindromeCheckerApp {
 
         PalindromeStrategy strategy = new StackStrategy();
 
+        // start time
+        long startTime = System.nanoTime();
+
         boolean result = strategy.check(input);
 
+        // end time
+        long endTime = System.nanoTime();
+
+        long executionTime = endTime - startTime;
+
         System.out.println("Is Palindrome? : " + result);
+        System.out.println("Execution Time : " + executionTime + " ns");
 
         scanner.close();
     }
 }
 
 /**
- * ============================================================
- * INTERFACE - PalindromeStrategy
- * ============================================================
- *
- * This interface defines a contract for all palindrome
- * checking algorithms.
+ * Palindrome Strategy Interface
  */
-
 interface PalindromeStrategy {
-
     boolean check(String input);
-
 }
 
 /**
- * ============================================================
- * CLASS - StackStrategy
- * ============================================================
- *
- * Stack based implementation of PalindromeStrategy
+ * Stack based palindrome strategy
  */
-
 class StackStrategy implements PalindromeStrategy {
 
     public boolean check(String input) {
 
         Stack<Character> stack = new Stack<>();
 
-        // push characters into stack
         for (char c : input.toCharArray()) {
             stack.push(c);
         }
 
-        // compare characters
         for (char c : input.toCharArray()) {
             if (c != stack.pop()) {
                 return false;
