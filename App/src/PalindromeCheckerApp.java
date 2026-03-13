@@ -1,7 +1,22 @@
 import java.util.Scanner;
 import java.util.Stack;
 
-public class PalindromeCheckerApp {
+/**
+ * ============================================================
+ * MAIN CLASS - UseCase13PalindromeCheckerApp
+ * ============================================================
+ *
+ * Use Case 13: Performance Comparison
+ *
+ * Description:
+ * This class measures and compares the execution
+ * performance of palindrome validation algorithms.
+ *
+ * Author: Krishna
+ * Version: 13.0
+ */
+
+public class UseCase13PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
@@ -12,10 +27,12 @@ public class PalindromeCheckerApp {
 
         PalindromeStrategy strategy = new StackStrategy();
 
+        // start time
         long startTime = System.nanoTime();
 
         boolean result = strategy.check(input);
 
+        // end time
         long endTime = System.nanoTime();
 
         long executionTime = endTime - startTime;
@@ -27,10 +44,16 @@ public class PalindromeCheckerApp {
     }
 }
 
+/**
+ * Palindrome Strategy Interface
+ */
 interface PalindromeStrategy {
     boolean check(String input);
 }
 
+/**
+ * Stack based palindrome strategy
+ */
 class StackStrategy implements PalindromeStrategy {
 
     public boolean check(String input) {
