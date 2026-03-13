@@ -2,7 +2,7 @@
 
 ### Langauge -   Java
 
-#### Version - 1.0
+#### Version - 5.0
 
 ## Welcoming to  Palindrome Checker Management System
 
